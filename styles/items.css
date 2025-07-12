@@ -1,0 +1,186 @@
+/* Styles specific to the items page */
+.item-page-content {
+    /* Loại bỏ 'margin: 20px auto;' để tránh xung đột với margin-left của content-wrapper */
+    max-width: 1200px;
+    /* margin-top và margin-bottom vẫn giữ để tạo khoảng cách trên dưới */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* Có thể thêm padding-right nếu muốn nội dung có khoảng cách từ cạnh phải của trang */
+    padding-right: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 25px;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+}
+
+.search-container input:focus {
+    border-color: var(--btn-primary-bg);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: calc(50% - 300px + 10px);
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    min-height: 300px; /* Đảm bảo có chiều cao tối thiểu */
+}
+
+.item-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    position: relative;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.item-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    padding: 10px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border-color);
+    cursor: zoom-in;
+}
+
+.item-card img.error-image {
+    color: var(--red-alert);
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe0e0;
+    border: 2px dashed var(--red-alert);
+    font-weight: bold;
+    text-align: center;
+}
+.item-card img.error-image::before {
+    content: "?";
+}
+
+
+.item-details {
+    padding: 10px 15px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.item-details span {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-color);
+    word-wrap: break-word;
+}
+
+.item-details .item-id {
+    font-weight: bold;
+    color: var(--btn-primary-bg);
+    margin-bottom: 5px;
+}
+
+
+/* Message when no items found */
+.not-found-message, .loading-message {
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 1.2em;
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+    justify-content: center;
+    margin-top: 30px;
+    gap: 8px; /* Khoảng cách giữa các nút */
+}
+
+.pagination button {
+    background-color: var(--pagination-btn-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled),
+.pagination button.page-number:hover {
+    background-color: var(--pagination-btn-hover-bg);
+    color: var(--text-color);
+}
+
+.pagination button.active {
+    background-color: var(--pagination-btn-active-bg);
+    color: var(--pagination-btn-active-text);
+    border-color: var(--pagination-btn-active-bg);
+    font-weight: bold;
+}
+
+.pagination button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive for search bar button */
+@media (max-width: 650px) {
+    .clear-search-btn {
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-list {
+        grid-template-columns: 1fr;
+    }
+    .search-container input {
+        font-size: 1em;
+    }
+    .pagination button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}

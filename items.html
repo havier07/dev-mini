@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Vật Phẩm - Website Vật Phẩm</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/items.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="index.html" class="logo-link">
+                <i id="logo-icon"></i>
+                <span id="logo-text"></span>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Chuyển đổi chế độ giao diện">
+                <i class="fas fa-adjust"></i>
+            </button>
+            <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Mở/đóng sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <button id="close-sidebar-btn" class="close-sidebar-btn" aria-label="Đóng sidebar">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                <li><a href="items.html"><i class="fas fa-box"></i> ID Vật Phẩm</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content-wrapper item-page-content">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm vật phẩm theo ID hoặc Tên..." aria-label="Tìm kiếm vật phẩm">
+            <button id="clearSearchButton" class="clear-search-btn" title="Xóa tìm kiếm"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div id="itemList" class="item-list">
+            <p class="loading-message">Đang tải dữ liệu vật phẩm...</p>
+        </div>
+
+        <div class="pagination" id="pagination">
+            </div>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/items.js"></script>
+    <script src="smoothScroll.js"></script>
+</body>
+</html>
