@@ -10,10 +10,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const itemsPerPage = AppConfig.ITEMS_PER_PAGE; // Lấy từ config.js
 
     function normalizeText(text) {
-        text = text.toLowerCase();
-        text = text.replace(/\s+/g, ' ').trim();
-        text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        return text;
+        if (typeof text !== 'string') {
+            text = String(text);
+        }
+        return text.toLowerCase()
+                   .normalize("NFD")
+                   .replace(/[\u0300-\u036f]/g, "")
+                   .replace(/đ/g, "d")
+                   .trim();
     }
 
     async function loadItemData() {

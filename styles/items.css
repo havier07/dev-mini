@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* Styles specific to the items page */
 .item-page-content {
     /* Loại bỏ 'margin: 20px auto;' để tránh xung đột với margin-left của content-wrapper */

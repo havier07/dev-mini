@@ -1,5 +1,5 @@
 function init(){
-	new SmoothScroll(document,90,15)
+	new SmoothScroll(document, 120, 20) // lực, tốc độ
 }
 function SmoothScroll(target, speed, smooth) {
 	if (target === document)
@@ -67,7 +67,7 @@ function SmoothScroll(target, speed, smooth) {
 
 init();
 
-$(document).on("click",".applyBtn.totop",function(){
-	$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
-	return false;
-});
+// $(document).on("click",".applyBtn.totop",function(){
+// 	$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+// 	return false;
+// });
