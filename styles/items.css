@@ -23,7 +23,7 @@ html {
 
 .search-container input {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     padding: 12px 40px 12px 15px;
     border: 1px solid var(--input-border-color);
     border-radius: 25px;
@@ -41,7 +41,7 @@ html {
 
 .clear-search-btn {
     position: absolute;
-    right: calc(50% - 300px + 10px);
+    right: calc(200px);
     background: none;
     border: none;
     font-size: 1.2em;
