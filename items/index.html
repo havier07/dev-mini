@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBlRkLOJypmX7XONW_3lcBTvK15pLZ9X6XCw&s" type="image/png">
-    <title>Mini World Resources</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>ID Vật Phẩm</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/items.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -34,34 +35,36 @@
             <nav>
                 <ul>
                     <li><a href="/"><i class="fas fa-home"></i> Trang Chủ</a></li>
-                    <li><a href="items/"><i class="fas fa-box"></i> ID Vật Phẩm</a></li>
+                    <li><a href="/items/"><i class="fas fa-box"></i> ID Vật Phẩm</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <main class="content-wrapper">
-            <section class="hero-section" id="hero-section">
-                <div class="hero-overlay">
-                    <h1>Chào mừng đến với Mini World Resources</h1>
-                    <p>Nơi đây sẽ tổng hợp các tài nguyên Mini World:Creata bởi _Havier_</p>
-                    <!-- <a href="items.html" class="btn-primary">Khám phá ID Vật Phẩm ngay!</a> -->
-                </div>
-            </section>
+        <main class="content-wrapper item-page-content">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm vật phẩm theo ID hoặc Tên..." aria-label="Tìm kiếm vật phẩm">
+                <button id="clearSearchButton" class="clear-search-btn" title="Xóa tìm kiếm"><i class="fas fa-times"></i></button>
+            </div>
 
-            <section class="about-section">
-                <h2>Giới thiệu</h2>
-                <p>Website này được tạo ra để cung cấp các công cụ hữu ích cho Mini-ers.</p>
-                <p>Nếu các bạn có thông tin gì về game hay ý tưởng để phát triển website thì có thể liên hệ thêm với mình.</p>
-            </section>
+            <div id="itemList" class="item-list">
+                <p class="loading-message">Đang tải dữ liệu vật phẩm...</p>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Danh Sách Trang -->
+            </div>
         </main>
-    </div> <div id="imageModal" class="modal">
+    </div>
+
+    <div id="imageModal" class="modal">
         <span class="close-button">&times;</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
 
-    <script src="config.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/smoothScroll.js"></script>
+    <script src="../config.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/items.js"></script>
+    <script src="../scripts/smoothScroll.js"></script>
 </body>
 </html>

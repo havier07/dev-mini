@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBlRkLOJypmX7XONW_3lcBTvK15pLZ9X6XCw&s" type="image/png">
+    <title>U là trời! 🤯 Không tìm thấy trang!</title>
+    <base href="/dev-mini/">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS dành riêng cho trang 404 */
+        .error-404-content {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: var(--card-bg-color); /* Sử dụng biến màu từ main.css nếu có */
+            border-radius: 15px;
+            box-shadow: var(--shadow-small); /* Sử dụng biến shadow từ main.css nếu có */
+            animation: fadeIn 1s ease-in-out;
+        }
+        .error-404-content h1 {
+            font-size: 4em;
+            color: var(--primary-color); /* Màu nhấn chính */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .error-404-content p {
+            font-size: 1.2em;
+            color: var(--text-color-secondary);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .error-404-content .btn-404 {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out, background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .error-404-content .btn-404:hover {
+            background-color: var(--hover-color); /* Màu hover của nút */
+            transform: translateY(-3px);
+        }
+        .error-404-content .emoji {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .error-404-content h1 {
+                font-size: 3em;
+            }
+            .error-404-content p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="/" class="logo-link"> <i id="logo-icon"></i>
+                <span id="logo-text"></span>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Chuyển đổi chế độ giao diện">
+                <i class="fas fa-adjust"></i>
+            </button>
+            <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Mở/đóng sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="main-layout-container">
+        <aside class="sidebar" id="sidebar">
+            <button id="close-sidebar-btn" class="close-sidebar-btn" aria-label="Đóng sidebar">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> Trang Chủ</a></li> <li><a href="items/"><i class="fas fa-box"></i> ID Vật Phẩm</a></li> </ul>
+            </nav>
+        </aside>
+
+        <main class="content-wrapper">
+            <div class="error-404-content">
+                <h1>Lỗi 404: Lạc Đường Rồi! 🗺️</h1>
+                <p>U là trời! Có vẻ trang này lạc trôi về đâu rồi. Không sao, chuyện thường ngày ở huyện mà! 😉</p>
+                <p>Thử quay về những nơi quen thuộc xem sao nhé:</p>
+                <a href="/" class="btn-404">Về Trang Chủ Ngay! 🏡</a>
+                <a href="items/" class="btn-404">Xem ID Vật Phẩm 📦</a>
+                <p class="emoji">✨ Đừng lo, chúng ta sẽ tìm thấy thứ bạn cần! ✨</p>
+            </div>
+        </main>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/smoothScroll.js"></script>
+</body>
+</html>

@@ -53,9 +53,12 @@ html {
 
 .item-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-    min-height: 300px; /* Đảm bảo có chiều cao tối thiểu */
+    grid-template-columns: repeat(auto-fill, minmax(230px, 0.5fr));
+    gap: 10px;
+    min-height: 200px; /* Đảm bảo có chiều cao tối thiểu */
+    padding: 0 10px; /* Thêm padding để tránh nội dung chạm vào lề */
+    margin-top: 20px; /* Khoảng cách giữa thanh tìm kiếm và danh sách */
+    margin-bottom: 20px; /* Khoảng cách dưới cùng của danh sách */
 }
 
 .item-card {

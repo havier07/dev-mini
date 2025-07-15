@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function loadItemData() {
         try {
-            const response = await fetch('data/Item_Data.json');
+            const response = await fetch('../data/Item_Data.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const itemsToDisplay = filteredItems.slice(startIndex, endIndex);
 
         if (itemsToDisplay.length === 0) {
-            itemListDiv.innerHTML = '<p class="not-found-message">Không tìm thấy vật phẩm nào phù hợp.</p>';
+            itemListDiv.innerHTML = '<p class="not-found-message">Không tìm thấy vật phẩm nào.</p>';
+            paginationDiv.innerHTML = ''; // Xóa phân trang nếu không có kết quả
             return;
         }
 
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 navigator.clipboard.writeText(item.id)
                     .then(() => {
                         const copiedMessage = document.createElement('div');
-                        copiedMessage.textContent = `Đã sao chép ID: ${item.id}`;
+                        copiedMessage.textContent = `Đã sao chép ID: ${item.id} | Vật phẩm: ${item.name_raw}`;
                         copiedMessage.style.cssText = `
                             position: fixed;
                             bottom: 20px;
